@@ -1,0 +1,674 @@
+
+
+html {
+
+    box-sizing: border-box;
+    font-size: 62.5%;/*1 rem = 10pixeles*/
+    
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  } /*codigo para no tener errores con el box model*/
+
+  body{
+    font-family: 'Khand', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2;
+} 
+@media (min-width: 768px) {
+    body{
+        font-size:1.6rem;
+    }
+}/*Agregrar por defecto el tamaño de nuestra fuente de texto*/
+  
+  /*Globales*/
+h1{
+    font-size: 4rem;
+    font-family: 'Teko';
+}
+
+@media (min-width: 768px) {
+    h1{
+        font-size: 5rem;
+        
+    }
+    
+}
+
+  
+h2{
+    font-family: 'Teko', sans-serif;
+    font-size: 3.2rem;
+    margin: 0 0 5rem 0; 
+  }
+@media (min-width: 768px) {
+        h2{
+            font-size: 4rem;
+        }
+    
+}
+
+h3{
+    font-family: 'Teko', sans-serif;
+    font-size: 2rem;
+}  
+
+@media (min-width: 768px) {
+
+    h3{
+        font-size: 3rem;
+    }
+    
+}
+
+img{
+   max-width: 100%;/*max-whidt: 100% sirve para que nuestro imagen abarque todo el espacio que tiene*/
+   display: block;
+   
+}
+
+a{
+    text-decoration:none;
+    color: #000;
+    font-size: 1.6rem;
+} /*Poner por dewfecto nuestros enlace en color negro y quitar la linea que se pone por defecto*/
+
+.contenedor{
+   max-width:35rem;
+   margin:0 auto;
+    
+}/*sirve para centrar nuestro contenido*/
+
+@media (min-width: 768px) {
+    .contenedor{
+        max-width: 70rem;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contenedor{
+        max-width: 85rem;
+        margin: 0 auto;
+    }
+}
+
+.btn{
+    background-color: #8cbc00;
+    display: block;
+    color: #FFF;
+    text-transform:uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .4s ease-out;
+    text-align: center;
+    border: none;
+
+}/*agregar diseño a nuestros enlaces o botones*/
+
+.btn:hover{
+    background-color: #769c02;
+    cursor: pointer;
+
+}/*Hover sirve para agregar efectos cuando pasas el cursor, mouse, raton etc*/
+/*Utilidades*/
+
+.text-center{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}/*usamos esta utilidad para centrar un texto que queramos*/
+
+.max-width-30{
+    max-width: 100%;
+    
+} 
+
+@media (min-width: 768px) {
+    .max-width{
+        max-width: 30rem;
+    }
+    
+}
+  /*Header y navegacion*/
+.nombre-sitio{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.nombre-sitio span{
+    color: #037bc0;
+    
+}
+
+.contenedor-nav{
+    border-top: 0.1rem solid #e1e1e1;
+   
+}/*agregar un border*/
+
+
+.nav-principal a{
+    padding:1.5rem 0rem ;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    
+    /* flex-direction:row;
+    justify-content: space-between; */
+}/*Utilizar flex para alinear nuestra navegacion y se vea mejor*/
+
+@media (min-width: 768px) {
+    .nav-principal {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+    
+.hero{
+    background-image: url(../img/principal.jpg); /*De esta manera insertamos una imagen desde css*/
+    background-repeat: no-repeat;/*Utilizamos esta propiedad para que no se repita nuestra imagen ya que por defecto se repite*/
+    background-size: cover;/*Utilizamos esta propiedad para que nuestra imagen se vea mejor*/
+    height: 33rem;/*colocamos la altura de nuestra imagen*/
+    background-position: center center;/*haacer que nuestra imagen se centre de manera vertical y horizontal*/
+    max-width: 100%;
+    display: block;
+   
+    
+}
+
+/*Categorias*/
+.categorias{
+    padding-top: 5rem;
+    
+
+}/*Agregamos un padding top para tener separacion*/
+
+.categorias h2{
+   text-align: center;
+
+}/*centramos nuestro h2*/
+.categorias span{
+    color: #037bc0;
+}/*modificamos nuestro span*/
+.categoria a {
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    font-size: 2rem;
+    transition: background-color 0.2s ease-out;
+}/*Agregramos estilo a nuestros enlaces*/
+
+.categoria a:hover{
+    background-color: #037bc0;
+    color: #FFF;
+    border-bottom-left-radius:0.7rem ;
+    border-bottom-right-radius: 0.7rem;
+
+}/*Agregramos estilo a nuestros enlaces*/
+
+
+
+.listado-categorias{
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+   
+    
+  
+}/*creamos el grid de 3 columnas */
+
+@media (min-width: 768px ) {
+    .listado-categorias{
+       
+        grid-template-columns: repeat(3,1fr);
+        
+      
+    }
+}
+
+
+/*Nostros*/
+
+.sobre-nosotros{
+    margin: 8rem 0 0 0 ;
+    background-image: linear-gradient(to top, transparent 50%, #037bc0 50%, #037bc0 100%), url(../img/nosotros.jpg);/*Agregamos un linear gradient para dividir la imagen y donde va ir el contenido y despues insertamos nuestra img*/
+    background-position: bottom center; /*colocar nuestra img en la parte izquierda y centrada*/
+    padding:6rem 0; /*Esta padding va a servir para hacer un poco mas grande nuestra contendio*/
+    background-repeat:no-repeat;
+    background-size:100% , 50rem; /*agrandar el tamaño de nuestra imagen y que se vea bien*/
+    object-fit:fill;
+}
+
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        margin: 8rem 0 0 0 ;
+        background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%), url(../img/nosotros.jpg);/*Agregamos un linear gradient para dividir la imagen y donde va ir el contenido y despues insertamos nuestra img*/
+        background-position: left center; /*colocar nuestra img en la parte izquierda y centrada*/
+        padding:6rem 0; /*Esta padding va a servir para hacer un poco mas grande nuestra contendio*/
+        background-repeat: no-repeat;
+        background-size:100% , 72rem; /*agrandar el tamaño de nuestra imagen y que se vea bien*/
+    }
+}
+
+.sobre-nosotros-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    row-gap: 10rem;
+   
+}/*creamos nuestro grid para acomodar la informacion*/
+@media (min-width: 768px) {
+    .sobre-nosotros-grid{
+        grid-template-columns:repeat(2,1fr);
+        column-gap:10rem;
+        grid-template-rows: none;
+
+
+    }
+    
+}
+
+.sobre-nosotros-grid, .texto-nosotros{
+    grid-column: 2/3;
+}/*colocamos las columnas que abarcara nuestro contenido*/
+
+
+.texto-nosotros  {
+    text-align: justify;
+     margin: 0;
+     padding: 0;
+    color: #FFF;
+}/*Agregamos estilo a nuestro texto*/
+
+.texto-nosotros h2  {
+   
+     margin: 0;
+     padding: 0;
+    
+}/*quitamos el margin y padding de nuestro h2*/
+
+.texto-nosotros p  {
+     margin: 0;
+     padding: 0;
+    
+}/*quitamos el margin y padding de nuestro p*/
+
+
+
+/*Listado de productos*/
+
+.contenido-principal{
+    padding-top: 1rem;
+}/*Agregamos un padding-top para tener un poco de separacion con el otro contenido que se encuentra arriba*/
+
+.producto{
+    background-color: #037bc0;
+}/*Agregamos un fondo al div que es el que anida el contenido del producto img, informacion, especificaciones etc*/
+
+.texto-producto{
+    text-align: center;
+    color: #FFF;
+    padding: 2rem;
+}/*centrar la informacion de cada producto nombre, precio, etc*/
+
+.texto-producto h3{
+    margin: 0;
+} /*Quitamos el margin de nuestro h3*/
+
+.texto-producto .precio{
+    font-size: 2.5rem;
+    font-weight: 900;
+}/*seleccionamos la clase precio para modificar el tamaño de nuestro precio*/
+
+.texto-producto p{
+    margin: 0 0 .5rem 0;
+
+}/*Agregramos un margin bottom para tener un pode de separcion hacia abajo*/
+
+.listado-productos{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 2rem;
+    
+   
+}/*Creamos un grid de 6 columnas de 1fr*/
+
+
+.producto:nth-child(1){
+    grid-column: 1/7; /*Esta propiedad sirve para que nuestro elemento html abarque la cantidad de columnas x */
+   
+    
+    grid-template-rows: 1fr 1fr;
+    
+    
+}/*nth-child(x) sirve para seleccionar los elementos hijos que se encuentran en la clase*/
+
+@media (min-width: 768px) {
+    .producto:nth-child(1){
+         /*Esta propiedad sirve para que nuestro elemento html abarque la cantidad de columnas x */
+        display: grid;
+        grid-column: 1/7;
+        grid-template-columns: 3fr 1fr; 
+        grid-template-rows: none;
+    }
+
+    
+}
+
+.producto:nth-child(1) img{
+   width: 100%;
+   
+    object-fit: center center;
+}/*seleccionamos img con nth-child para modificarla*/
+
+@media (min-width: 768px) {
+    .producto:nth-child(1) img{
+        height: 100%;
+        width: 100%;
+        object-fit: center center;
+    }
+}
+
+
+
+.producto:nth-child(2){
+    grid-column: 1/7 /*usamos la propiedad grid-column para colocarle el valor de cuantas columnas abarcar*/
+    
+}
+/*hacemos lo mismo con los demas o con el elemento que lo necesite*/
+
+@media (min-width: 768px) {
+    .producto:nth-child(2){
+        grid-column: 1/4 /*usamos la propiedad grid-column para colocarle el valor de cuantas columnas abarcar*/
+        
+    }
+}
+.producto:nth-child(2) img, .producto:nth-child(3) img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+
+
+.producto:nth-child(3){
+    grid-column: 1/7;
+
+}
+
+@media (min-width: 768px) {
+    .producto:nth-child(3){
+        grid-column: 4/7;
+    }
+    
+    
+}
+
+.producto:nth-child(4){
+    grid-column: 1/7;
+}
+
+@media (min-width: 768px) {
+    .producto:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+.producto:nth-child(5){
+    grid-column: 1/7;
+}
+
+@media (min-width: 768px) {
+    .producto:nth-child(5){
+        grid-column: 3/5;
+    }
+    
+}
+.producto:nth-child(6){
+    grid-column: 1/7;
+}/*hacemos lo mismo con los demas o con el elemento que lo necesite*/
+
+@media (min-width: 768px) {
+    .producto:nth-child(6){
+        grid-column: 5/7;
+    }
+    
+}
+
+
+/*Footer*/
+.contenido-principal-contacto{
+   
+ border-top: 0.1rem solid #e1e1e1;
+   margin-top: 5rem;
+   padding-top: 3rem;
+
+   } /*Creamos un border en la parte superior de nuestro footer*/
+
+.listado-contactanos{
+   
+    text-align: center;
+    gap: 1.4rem;
+    font-size: 1.4rem;
+    
+}/*Creamos un grid de tres columnas */
+
+@media (min-width: 768px) {
+    .listado-contactanos{
+       display: grid;
+       grid-template-columns: repeat(3,1fr);
+       text-align: left;
+        gap: 4rem;
+        
+    }
+    
+}
+.texto-contactanos h3{
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+
+} /*quitamos el margin y agregamos un margin boattom a nuestro h3 del footer*/
+@media (min-width: 768px) {
+    .texto-contactanos h3{
+    
+       font-size: 3rem;
+    
+    }
+}
+
+.nav-contactanos a {
+   display: block;
+   
+
+} /*usamos display blok para alinear nuestros enlaces de manera vertical*/
+
+.parrafo{
+  margin-top: 2rem;
+   color: #000;
+  text-align: center;
+}/*centramos y separamos un poco nuestro parrafo que contiene los derechos de autor*/
+
+
+
+/*Nosotros*/
+
+
+
+.nosotros-grid{
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit,minmax(25rem, 1fr));/*propiedad: si nuestro contenido es menor a 25rem=250px le da el valor de 1fr a nuestros elementos hijos del grid grid*/
+    column-gap: 2rem;
+    padding-top: 3rem;
+    
+}/*Grid de dos columnas*/
+
+
+
+.nosotros-contenido{
+   display: flex;
+   flex-direction: column;
+   text-align: justify;
+   justify-content: space-between;
+   padding: 2rem;
+}/*Alinear nuestro contenido verticalmente y se vea mejor usamos flexbox con su propiedad justify-content*/
+
+@media (min-width: 768px) {
+    .nosotros-contenido {
+         padding: 0;
+         justify-content: space-between;
+         
+    }
+
+    .nosotros-contenido p{
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+    }
+}    
+
+
+/*Blog*/
+
+/*Crear nuestro grid de dos columnas de 2fr y 1 fr del espacio disponible*/
+
+@media (min-width: 768px) {
+    .contenedor-blog{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+    
+}
+
+.entrada{
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}/*Crear un border como separacion de las entradas del blog*/
+
+.entrada:last-of-type{
+    border: none;
+} /*Eliminar el ultimo border ya que no hay mas entradas de blog*/
+
+/*alinear  fecha y autor con flexbox*/
+
+@media (min-width: 768px) {
+    .entrada-meta{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.entrada-meta p{
+    font-weight: 700;
+    
+}/*Ajustar el ancho de la fuente de nustro parrafo*/
+
+
+
+.entrada-meta span{
+    color: #037bc0;
+}/*Dar estilo a nuestro span*/
+
+
+@media (min-width: 768px) {
+    .contenido-entrada-blog{
+        width: 50rem;
+        margin:0 auto;
+    }/*centrar nuestra entrada de blog*/
+    
+}
+
+
+
+/*Galeria*/
+
+.galeria{
+    list-style:none;/*eliminar las viñetas que viene por defecto en una lista odernada o no ordenada etc*/
+    padding: 0;
+    margin:0;
+    display: grid;/*crear nuestro grid */
+    grid-template-columns: 1fr;
+    gap: 2rem; /*Espacio entre las columnas y filas*/
+}
+
+.galeria .img{
+    /* grid-column: 1/3; */
+    
+}
+
+@media (min-width: 768px) {
+       .galeria {
+            grid-template-columns: repeat(3,1fr);/*crear un grid de 3 columnas de un 1fr */
+        
+        }
+
+    
+}
+.galeria img{
+    height: 20rem;
+    width: 40rem;
+    
+    object-fit: cover;
+}/*Ajustar nuestras imagenes*/
+
+/*Formulario*/
+
+.formulario{
+    max-width: 60rem;
+    margin: 0 auto;
+}/*Centrar nuestro formulario*/
+
+.formulario fieldset{
+    border: 1px solid black ;
+    margin-bottom: 2rem;
+    
+}/*modificar el border dell fieldset*/
+
+.formulario legend {
+    background-color: #005485;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}/*Dar estilo al legend nombre de la seccion del formulario, fondo, ancho, etc*/
+.campo{
+    display: flex;
+   margin-bottom: 2rem;
+   
+}/*alineando nuestros label y inputs*/
+.campo label{
+    flex-basis: 10rem;
+    
+
+}/*Espacio entre el label y el input*/
+
+.campo input:not([type="radio"]), .campo textarea, .campo select{ 
+    flex: 1;
+    border: 1px solid #e1e1e1;
+}/*hacer que nustros input abarque el espacio restante*/
+/*el selector pseudoselector not se utiliza para negar un elemento atributo de html*/
+
+
+.campo-btn input{
+    width: 100%;
+}/*hacer que nuestro input submit abarque todo el espacio*/
+
+@media (min-width: 768px) {
+    .campo-btn input{
+        width:fit-content;
+       
+
+    }
+
+    .campo-btn{
+        display: flex;
+        justify-content: center;
+    }
+}
